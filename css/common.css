@@ -1,13 +1,13 @@
-@import url('normalize.css');
-@import url('reset.css');
-@import url('flex-utility.css');
+@import url("normalize.css");
+@import url("reset.css");
+@import url("flex-utility.css");
 
 :root {
   /* 
   디자인 참조 링크 : 
   https://www.figma.com/design/KoHPPsMvZQxFkoIPiuH5T0/MY-ACME?node-id=21-172&t=XXuLpfD0QjoBIcXL-1
    */
-  
+
   /* Layout */
   --base-unit: 27px;
   --base-font: 16px;
@@ -18,7 +18,7 @@
   --light--gray: rgba(168, 168, 168, 1);
   --super--light--gray: rgba(235, 235, 235, 1);
   --white: rgba(255, 255, 255, 1);
-  
+
   --primary: rgba(154, 199, 91, 1);
   --secondary: rgba(85, 118, 44, 1);
   --hero: rgba(45, 62, 79, 1);
@@ -43,7 +43,9 @@ body {
   /* font-family: "Open Sans", sans-serif;
   font-size: var(--base-font);
   line-height: var(--base-unit); */
-  font: var(--base-font)/var(--base-unit) "Open Sans", sans-serif;
+  font:
+    var(--base-font)/var(--base-unit) "Open Sans",
+    sans-serif;
 }
 
 /* 폰트 위계 */
@@ -76,7 +78,7 @@ body {
   line-height: var(--base-unit);
 }
 
-.text-nav{
+.text-nav {
   font-size: var(--nav--item);
   font-weight: bold;
   text-transform: uppercase;
@@ -84,7 +86,7 @@ body {
 
 /* 링크 버튼 */
 
-.btn{
+.btn {
   height: 39px;
   background: var(--super--light--gray);
   border-radius: 3px;
@@ -98,34 +100,34 @@ body {
   text-transform: uppercase;
 }
 
-.btn .material-icons{
+.btn .material-icons {
   font-size: 14px;
 }
 
-.btn.big{
+.btn.big {
   height: calc(var(--base-unit) * 2);
   padding: 0 30px;
 }
 
-.btn-primary{
+.btn-primary {
   background: var(--primary);
   color: var(--secondary);
 }
 
 /* 폼 요소 */
 
-.hero{
+.hero {
   background: var(--hero);
 }
 
-form{
+form {
   width: 350px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-form .field{
+form .field {
   height: calc(var(--base-unit) * 2);
   background: var(--white);
   border-radius: 3px;
@@ -135,16 +137,16 @@ form .field{
   color: var(--light--gray);
 }
 
-form .field input{
+form .field input {
   font-style: italic;
-  color:var(--black);
+  color: var(--black);
 }
 
-form .field input::placeholder{
+form .field input::placeholder {
   color: var(--super--light--gray);
 }
 
-form button{
+form button {
   height: calc(var(--base-unit) * 2);
   border: 1px solid var(--white);
   border-radius: 3px;
@@ -159,49 +161,87 @@ form button{
 
 /* 레이아웃 */
 
-.container{
+.container {
   width: 1272px;
   margin: 0 auto;
 }
 
-.inner-pd{
+.inner-pd {
   padding: calc(var(--base-unit) * 3) 0;
 }
 
-.inner-top-pd{
+.inner-top-pd {
   padding-top: calc(var(--base-unit) * 3);
 }
 
-hr{
+hr {
   border: none;
   /* border-top: 1px solid var(--super--light--gray); */
   height: 1px;
   background: var(--super--light--gray);
 }
 
-
 /* 헤더 */
 
-body > header{
+body > header {
   background: var(--white);
   padding: var(--base-unit) 0;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
 }
 
-.hidden{
-	position: absolute;
-	clip-path:inset(50%);
-	width: 1px;
-	height: 1px;
-	overflow:hidden;
+.hidden {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-header nav ul{
+header nav ul {
   gap: 10px;
 }
 
-header nav ul li:first-child{
+header nav ul li:first-child {
   margin-right: 40px;
 }
 
+/* 슬라이드 */
 
+.slidewrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.slidecontainer {
+  width: 300%; /* js 부모 너비파악, 슬라이드 개수 파악, 너비 계산 지정할 예정 */
+  display: flex;
+  transition: 0.3s ease-out;
+}
+
+.slidecontainer li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--base-unit);
+}
+
+.slidewrapper button {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light--gray);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slidewrapper button.prev {
+  left: 0;
+}
+.slidewrapper button.next {
+  right: 0;
+}

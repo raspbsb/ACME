@@ -3,22 +3,18 @@
 }
 
 .flex-column {
-  display: flex;
   flex-direction: column;
 }
 
 .justify-content-center {
-  display: flex;
   justify-content: center;
 }
 
 .justify-content-between {
-  display: flex;
   justify-content: space-between;
 }
 
 .align-items-center {
-  display: flex;
   align-items: center;
 }
 
@@ -28,4 +24,8 @@
 
 .g-2 {
   gap: calc(var(--base-unit) * 2);
+}
+
+.text-center {
+  align-items: center;
 }

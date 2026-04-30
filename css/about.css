@@ -1,6 +1,7 @@
 .qnalist {
   width: 750px;
   margin: 0 auto;
+  gap: 1px;
 }
 
 .qnalist li.active .question span {

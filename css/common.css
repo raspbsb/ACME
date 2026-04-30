@@ -190,6 +190,10 @@ hr {
   background: var(--super--light--gray);
 }
 
+section .header {
+  margin-bottom: calc(var(--base-unit) * 2);
+}
+
 /* 헤더 */
 
 body > header {
@@ -233,6 +237,11 @@ header nav ul li:first-child {
   flex-direction: column;
   align-items: center;
   gap: var(--base-unit);
+}
+
+.slidecontainer li > p {
+  width: 700px;
+  text-align: center;
 }
 
 .slidewrapper button {
